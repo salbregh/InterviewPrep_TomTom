@@ -1,0 +1,18 @@
+# Common gitignore flist for react developers
+
+# node_modules is used t save all downloaded packages from npm
+# its recommended to do a fresh install with npm install 
+# when running the JavaScript project on another computer
+# all package details to builf and run are in package.json
+node_modules/
+.cache/
+# common name to store output of a build in
+# we dont need to push this build output
+# MAYBE WE HAVE A DIFFERENT NAME?
+dist/
+# secure environment variables and values
+.env
+.DS_STORE
+# folder generated as part of code coverage testing: MAYBE REMOVE?
+coverage/
+.vscode
