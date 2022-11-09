@@ -1,4 +1,3 @@
 cd wordle
-npm install
-# npm run build
+npm install --force
 npm start

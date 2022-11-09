@@ -1,7 +1,6 @@
 import { words } from "./words";
 
-const answer = words[Math.floor(Math.random() * words.length)]
-// const answer = "range";
+let answer = words[Math.floor(Math.random() * words.length)]
 
 export const validateGuess = (guess) => {
   console.clear();
@@ -12,14 +11,18 @@ export const validateGuess = (guess) => {
   console.log(`the guess: ${guess}`);
   console.log(`the answer: ${answer}`);
 
+  // if the answer is correct, we go to the next word.
   if (guess === answer) {
-    console.log('CONGRATS! This is the correct word!!!');
+    console.log('CONGRATS! This is the correct word!');
     alert(`WHOOOOOO CORRECT WORD!`);
+    answer = words[Math.floor(Math.random() * words.length)];
+    console.clear();
+    console.log('A new word is provided :)');
     return ;
   }
   if (guess.length > 5) {
     console.log('Too many letters.');
-    return;
+    return ;
   }
   if (guess.length < 5) {
     console.log("Not enough letters.");
@@ -39,12 +42,12 @@ export const validateGuess = (guess) => {
   for (let i = 0; i < 5; i++) {
     let pos = answer.indexOf(guess[i]);
     if (pos === -1) {
-      message = ': Wrong letter :(';
+      message = ': This letter is not in the word.';
     } else {
       if (pos === i) {
-        message = ': Correct :)';
+        message = ': Correct!';
       } else {
-        message = ': Wrong position :|';
+        message = ': Correct letter, but in the wrong position.';
       }
     }
     console.log(`[${guess[i]}] ${message}`);
