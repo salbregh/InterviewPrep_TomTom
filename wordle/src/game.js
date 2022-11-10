@@ -53,5 +53,3 @@ export const validateGuess = (guess) => {
     console.log(`[${guess[i]}] ${message}`);
   }
 };
-
-// https://dev.to/stefirosca/7-tips-tricks-to-make-your-console-log-output-stand-out-389g
